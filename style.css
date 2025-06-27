@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: manipulation;
+}
+
+#gameCanvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: none;
+}
+
+.score-display {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 10;
+    pointer-events: none;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    text-align: center;
+    animation: modalFadeIn 0.5s ease;
+    overflow-y: auto;
+    position: relative;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content h2 {
+    color: #ff6b9d;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.video-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#celebrationVideo {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.end-message {
+    margin: 15px 0;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+/* Game over screen */
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.game-over h2 {
+    color: #ff6b9d;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.game-over p {
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .score-display {
+        font-size: 1.8em;
+        top: 15px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1% auto;
+        padding: 15px;
+        max-height: 95vh;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    #celebrationVideo {
+        max-height: 40vh;
+    }
+    
+    .end-message {
+        font-size: 1em;
+        padding: 12px;
+        margin: 10px 0;
+    }
+    
+    button {
+        padding: 15px 25px;
+        font-size: 1.1em;
+        min-height: 44px;
+    }
+    
+    .game-over {
+        padding: 30px;
+    }
+    
+    .game-over h2 {
+        font-size: 1.6em;
+    }
+    
+    .game-over p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .score-display {
+        font-size: 1.5em;
+        top: 10px;
+    }
+    
+    .modal-content {
+        margin: 0.5% auto;
+        padding: 12px;
+        width: 98%;
+        max-height: 98vh;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.1em;
+    }
+    
+    #celebrationVideo {
+        max-height: 35vh;
+    }
+    
+    .end-message {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+    
+    .game-over {
+        padding: 25px;
+        width: 90%;
+    }
+}

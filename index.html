@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gefeliciteerd! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+
+    <div class="score-display">Score: <span id="score">0/15</span></div>
+
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 Gefeliciteerd! Je hebt 15 punten behaald! 🎉</h2>
+            <div class="video-container">
+                <video id="celebrationVideo" controls autoplay>
+                    <source src="video/diono.mp4" type="video/mp4">
+                    Je browser ondersteunt deze video niet.
+                </video>
+            </div>
+            <div id="endMessage" class="end-message" style="display: none;">
+                <p>Met liefde gemaakt door Kevin & Romy ❤️</p>
+            </div>
+            <button id="closeModal">Sluiten & Opnieuw Spelen</button>
+        </div>
+    </div>
+
+    <div class="game-over" id="gameOver" style="display: none;">
+        <h2>Game Over!</h2>
+        <p>Eindstand: <span id="finalScore">0</span></p>
+        <button id="playAgainBtn">Opnieuw Spelen</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
