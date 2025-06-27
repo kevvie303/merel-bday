@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
     height: 100vh;
     width: 100vw;
@@ -27,21 +27,30 @@ body {
     touch-action: none;
 }
 
+h1, h2, h3, button {
+    font-family: 'DynaPuff', 'Arial', sans-serif;
+    color: #d4517c;
+}
+
+p {
+    font-family: 'DynaPuff', 'Arial', sans-serif;
+
+}
+
 .score-display {
+    color: #ffffff;
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    top: 1rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #343434;
     z-index: 10;
-    pointer-events: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
 }
 
 button {
-    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    background: #d4517c;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -70,12 +79,12 @@ button:active {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #0000008a;
     overflow-y: auto;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 2% auto;
     padding: 20px;
     border-radius: 15px;
@@ -99,13 +108,6 @@ button:active {
     }
 }
 
-.modal-content h2 {
-    color: #ff6b9d;
-    margin-bottom: 15px;
-    font-size: 1.4em;
-    line-height: 1.3;
-}
-
 .video-container {
     width: 100%;
     margin-bottom: 15px;
@@ -123,12 +125,9 @@ button:active {
 .end-message {
     margin: 15px 0;
     padding: 15px;
-    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
     border-radius: 10px;
-    color: white;
-    font-size: 1.1em;
+    color: #d4517c;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .game-over {
@@ -139,7 +138,7 @@ button:active {
     background: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:  0 0 10px #343434;
     z-index: 100;
 }
 
@@ -149,10 +148,10 @@ button:active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 0px 30px #343434;
     z-index: 1000;
     text-align: center;
 }
@@ -171,11 +170,6 @@ button:active {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .score-display {
-        font-size: 1.8em;
-        top: 15px;
-    }
-    
     .modal-content {
         width: 95%;
         margin: 1% auto;
@@ -184,7 +178,6 @@ button:active {
     }
     
     .modal-content h2 {
-        font-size: 1.2em;
         margin-bottom: 10px;
     }
     
@@ -193,7 +186,7 @@ button:active {
     }
     
     .end-message {
-        font-size: 1em;
+        /* font-size: 1em; */
         padding: 12px;
         margin: 10px 0;
     }
@@ -207,21 +200,9 @@ button:active {
     .game-over {
         padding: 30px;
     }
-    
-    .game-over h2 {
-        font-size: 1.6em;
-    }
-    
-    .game-over p {
-        font-size: 1.2em;
-    }
 }
 
 @media (max-width: 480px) {
-    .score-display {
-        font-size: 1.5em;
-        top: 10px;
-    }
     
     .modal-content {
         margin: 0.5% auto;
@@ -239,7 +220,7 @@ button:active {
     }
     
     .end-message {
-        font-size: 0.9em;
+        /* font-size: 0.9em; */
         padding: 10px;
     }
     

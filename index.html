@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gefeliciteerd! 🎉</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="icon" href="flappy/mereltje.png" type="image/x-icon">
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
     
-
-    <div class="score-display">Score: <span id="score">0/15</span></div>
-
+        <h2 class="score-display">
+            Score:
+            <span id="score">0/15</span>
+        </h2>
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
@@ -25,14 +28,14 @@
             <div id="endMessage" class="end-message" style="display: none;">
                 <p>Met liefde gemaakt door Kevin & Romy ❤️</p>
             </div>
-            <button id="closeModal">Sluiten & Opnieuw Spelen</button>
+            <button id="closeModal">Sluiten & Opnieuw spelen</button>
         </div>
     </div>
 
     <div class="game-over" id="gameOver" style="display: none;">
-        <h2>Game Over!</h2>
+        <h2>Game over!</h2>
         <p>Eindstand: <span id="finalScore">0</span></p>
-        <button id="playAgainBtn">Opnieuw Spelen</button>
+        <button id="playAgainBtn">Opnieuw spelen</button>
     </div>
 
     <script src="script.js"></script>
